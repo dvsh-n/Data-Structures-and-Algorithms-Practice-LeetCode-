@@ -30,9 +30,10 @@ class linked_list():
             self.tail = new_node
         self.length = self.length + 1
 
+    def append_many(self, *args):
+        for i in args:
+            self.append(i)
+
 new_list = linked_list()
-new_list.append(9)
-new_list.append(10)
-new_list.append(20)
-new_list.append(30)
+new_list.append_many(9,10,20,30)
 new_list.print_all()
