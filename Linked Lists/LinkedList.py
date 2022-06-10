@@ -13,24 +13,26 @@ class linked_list():
         temp = self.head
         print(str(temp.value), end = ' -> ')
         while temp.next != None:
-            print(str(temp.value), end = ' -> ')
             temp = temp.next
+            print(str(temp.value), end = ' -> ')
         print('End\n')
 
-    def add_node(self, value):
-        if self.length == 0:
-            self.head = node(value)
+    def append(self, value):
+        new_node = node(value)
+        if self.head == None:
+            self.head = new_node
             self.tail = self.head
         else:
-            new_node = self.head
-            while new_node.next != None:
-                new_node = new_node.next
-            new_node.next = node(value)
-            self.tail = new_node.next
+            last = self.head    
+            while last.next != None:
+                last = last.next
+            last.next = new_node
+            self.tail = new_node
         self.length = self.length + 1
 
 new_list = linked_list()
-new_list.add_node(9)
-new_list.add_node(10)
-new_list.add_node(20)
+new_list.append(9)
+new_list.append(10)
+new_list.append(20)
+new_list.append(30)
 new_list.print_all()
