@@ -34,17 +34,27 @@ class linked_list():
         for i in args:
             self.append(i)
 
-    def traverse(self, index):
+    def traverse_to_index(self, index):
         temp = self.head
         i = 0
         while i != index:
             temp = temp.next
             i += 1
-        return temp.value
+        return temp
+
+    def insert(self, value, index):
+        prev_Node = self.traverse_to_index(index - 1)
+        next_Node = prev_Node.next
+        new_Node = node(value)
+        new_Node.next = next_Node
+        prev_Node.next = new_Node
+        self.length += 1
+
+
         
 
 
 new_list = linked_list()
 new_list.append_many(9,10,20,30,22)
-print(new_list.traverse(0))
+new_list.insert(35,2)
 new_list.print_all()
