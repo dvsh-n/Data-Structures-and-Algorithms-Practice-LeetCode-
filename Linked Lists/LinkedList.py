@@ -15,7 +15,7 @@ class linked_list():
         while temp.next != None:
             print(str(temp.value), end = ' -> ')
             temp = temp.next
-        print('\n')
+        print('End\n')
 
     def add_node(self, value):
         if self.length == 0:
