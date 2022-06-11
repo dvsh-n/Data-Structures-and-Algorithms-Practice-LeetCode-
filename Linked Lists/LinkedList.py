@@ -54,9 +54,21 @@ class linked_list():
         new_Node.next = next_Node
         prev_Node.next = new_Node
         self.length += 1        
+    
+    def reverse(self):
+        temp = []
+        curr_Node = self.head
+        last_Node = self.tail
+        curr_Node.value, last_Node.value = last_Node.value, curr_Node.value
+        for i in range(int((self.length-2)/2)):
+            curr_Node = curr_Node.next
+            temp.append(curr_Node.value)
+        curr_Node = self.head
+        for j in reversed(range(len(temp))):
+            curr_Node = curr_Node.next
+            curr_Node.value = temp[j]
+        return self
 
-    # def reverse(self):
-    #     for i in range(int(self.length/2)):
 
 
 
@@ -65,4 +77,6 @@ new_list = linked_list()
 new_list.append_many(9,10,20,30,22)
 new_list.insert(35,2)
 print(new_list.traverse_to_index(-1).value)
+new_list.print_all()
+new_list.reverse()
 new_list.print_all()
