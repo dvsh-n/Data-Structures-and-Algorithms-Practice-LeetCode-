@@ -33,7 +33,6 @@ class linked_list():
     def append_many(self, *args):
         for i in args:
             self.append(i)
-        self.length += len(args)
 
     def traverse_to_index(self, index):
         temp = self.head
@@ -65,5 +64,5 @@ class linked_list():
 new_list = linked_list()
 new_list.append_many(9,10,20,30,22)
 new_list.insert(35,2)
-print(new_list.traverse_to_index(-3).value)
+print(new_list.traverse_to_index(-1).value)
 new_list.print_all()
