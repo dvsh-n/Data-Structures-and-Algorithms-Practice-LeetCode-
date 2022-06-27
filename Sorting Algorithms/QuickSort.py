@@ -1,7 +1,6 @@
 import random
 
-nums = [3,7,8,5,2,1,9,5,4]
-n = [5,8,9,5,7]
+nums = [26,79,13,65,24,46,876,43,214,87,36,98]
 
 def quick_sort(nums):
     sorted  = True
@@ -25,6 +24,4 @@ def quick_sort(nums):
                 pivot_idx -= 1
             if nums[i] < pivot:
                 i += 1
-        return (nums), pivot_idx
-
-print(quick_sort(nums))
+        return (nums)
