@@ -3,9 +3,12 @@ nums = [26,79,13,65,24,46,876,43,214,87,36,98]
 def merge_sort(nums):
     if len(nums) == 1:
         return nums
-    center = nums//2
+
+    center = len(nums)//2
     left = nums[:center]
     right = nums[center:]
+
+    return comparator(merge_sort(left), merge_sort(right))
 
 def comparator(left, right):
     result = []
@@ -26,5 +29,4 @@ def comparator(left, right):
     
     return result
 
-print(comparator([1,2,5,7,8], [1,2,6,7,8]))
-    
+print(merge_sort(nums))
