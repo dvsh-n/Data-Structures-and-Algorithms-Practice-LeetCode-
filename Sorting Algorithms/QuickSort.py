@@ -11,7 +11,6 @@ def quick_sort(nums):
     if sorted:
         return nums
     else:
-        # pivot_idx = random.randint(0, len(nums)-1)
         pivot_idx = len(nums) - 1
         pivot = nums[pivot_idx]
         i = 0
@@ -24,4 +23,6 @@ def quick_sort(nums):
                 pivot_idx -= 1
             if nums[i] < pivot:
                 i += 1
-        return (nums)
+    return quick_sort(nums[:pivot_idx]) + [nums[pivot_idx]] + quick_sort(nums[pivot_idx + 1:]) 
+
+print(quick_sort(nums))
