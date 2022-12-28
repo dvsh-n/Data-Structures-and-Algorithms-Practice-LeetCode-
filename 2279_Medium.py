@@ -14,21 +14,18 @@ def maximumBags(capacity, rocks, additionalRocks):
         data[i] += 1
 
     for i in range(len(data)):
-        if  i == 0:
+        total = data[i] * i # no. of bags where i rocks can be filled * i
+        if total <= additionalRocks:
+            additionalRocks -= total
             result += data[i]
         else:
-            total = data[i] * i # no. of bags where i rocks can be filled * i
-            if total <= additionalRocks:
-                additionalRocks -= total
+            remainder = total % additionalRocks
+            if remainder == 0:
                 result += data[i]
             else:
-                remainder = total % additionalRocks
-                if remainder == 0:
-                    result += data[i]
-                else:
-                    result += data[i] - 1
-                additionalRocks = 0
-                break
+                result += data[i] - 1
+            additionalRocks = 0
+            break
 
     return result, diff, max, additionalRocks
     
