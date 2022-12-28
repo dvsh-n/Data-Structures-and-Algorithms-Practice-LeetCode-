@@ -30,6 +30,6 @@ def maximumBags(capacity, rocks, additionalRocks):
                 additionalRocks = 0
                 break
 
-    return result
+    return result, diff, max, additionalRocks
     
-print(maximumBags([10,2,2], [2,2,0], 100))
+print(maximumBags([91,54,63,99,24,45,78], [35,32,45,98,6,1,25], 17))
