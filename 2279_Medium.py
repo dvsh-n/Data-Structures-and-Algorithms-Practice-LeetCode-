@@ -19,14 +19,11 @@ def maximumBags(capacity, rocks, additionalRocks):
             additionalRocks -= total
             result += data[i]
         else:
-            remainder = total % additionalRocks
-            if remainder == 0:
-                result += data[i]
-            else:
-                result += data[i] - 1
-            additionalRocks = 0
+            ratio = additionalRocks/total # ratio of additionalRocks over total space
+            result += (int)(ratio*data[i]) # ratio * no. of bags gives (float) no. of bags required, floor that to get no. of bags filled to max
+            additionalRocks = 0 # all rocks empty
             break
 
-    return result, diff, max, additionalRocks
+    return result, diff, max, data, additionalRocks
     
 print(maximumBags([91,54,63,99,24,45,78], [35,32,45,98,6,1,25], 17))
