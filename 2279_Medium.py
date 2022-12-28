@@ -7,15 +7,11 @@ def maximumBags(capacity, rocks, additionalRocks):
         if diff_i > max:
             max = diff_i
         diff.append(diff_i)
-    print(max)
 
     data = [0 for j in range(max+1)]
-    print(data)
-    print(diff)
 
     for i in diff:
         data[i] += 1
-    print(data)
 
     for i in range(len(data)):
         if  i == 0:
@@ -35,5 +31,5 @@ def maximumBags(capacity, rocks, additionalRocks):
                 break
 
     return result
-
-print(maximumBags([2,3,4,5], [1,2,4,4], 2))
+    
+print(maximumBags([10,2,2], [2,2,0], 100))
