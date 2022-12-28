@@ -1,19 +1,14 @@
 def maximumBags(capacity, rocks, additionalRocks):
     result = 0
-    max = 0
     data = {}
     for i in range(len(capacity)):
         diff_i = capacity[i] - rocks[i]
-        if diff_i > max:
-            max = diff_i
         if diff_i not in data:
             data[diff_i] = 1
         else:
             data[diff_i] += 1
 
-    for i in range(max+1):
-        if i not in data:
-            continue
+    for i in sorted(data.keys()):
         total = data[i] * i # no. of bags where i rocks can be filled * i
         if total <= additionalRocks:
             additionalRocks -= total
@@ -24,6 +19,6 @@ def maximumBags(capacity, rocks, additionalRocks):
             additionalRocks = 0 # all rocks empty
             break
 
-    return result, max, data, additionalRocks
+    return result
     
-print(maximumBags([91,54,63,99,24,45,78], [35,32,45,98,6,1,25], 17))
+print(maximumBags([10,1000000000], [10,0], 1000000000))
