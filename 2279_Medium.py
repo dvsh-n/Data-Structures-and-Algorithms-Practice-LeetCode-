@@ -25,14 +25,14 @@ def maximumBags(capacity, rocks, additionalRocks):
             if total <= additionalRocks:
                 additionalRocks -= total
                 result += data[i]
-            elif total > additionalRocks:
+            else:
                 remainder = total % additionalRocks
                 if remainder == 0:
                     result += data[i]
                 else:
                     result += data[i] - 1
                 additionalRocks = 0
-            break
+                break
 
     return result
 
