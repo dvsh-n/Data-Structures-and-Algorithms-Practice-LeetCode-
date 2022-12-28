@@ -21,4 +21,4 @@ def maximumBags(capacity, rocks, additionalRocks):
 
     return result
     
-print(maximumBags([10,1000000000], [10,0], 1000000000))
+# This code uses dictionaries to solve the problem which makes the code very fast however, since dictionaries use a lot of memory, this code is fast but uses a lot more memory.
